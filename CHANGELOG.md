@@ -25,3 +25,15 @@ All notable changes to this project are documented in this file.
 
 - CI now runs coverage-aware tests instead of the plain Jest command.
 - README now documents the coverage workflow and the more granular test layout.
+
+## [0.3.0] - 2026-06-27
+
+### Added
+
+- Root `index.d.ts` declaration file for all 20 public utilities.
+- Public API test to lock the package export surface.
+
+### Changed
+
+- Package metadata now includes `types`, `exports`, and publishable type files.
+- README now documents TypeScript consumption from the root package entry point.

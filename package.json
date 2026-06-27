@@ -3,9 +3,17 @@
   "version": "0.1.0",
   "description": "Tested JavaScript string utility library with 20 modular functions.",
   "main": "src/index.js",
+  "types": "index.d.ts",
   "type": "commonjs",
+  "exports": {
+    ".": {
+      "require": "./src/index.js",
+      "types": "./index.d.ts"
+    }
+  },
   "files": [
-    "src"
+    "src",
+    "index.d.ts"
   ],
   "scripts": {
     "test": "jest --runInBand",
@@ -16,6 +24,7 @@
   },
   "keywords": [
     "string",
+    "typescript",
     "utilities",
     "jest",
     "library"
