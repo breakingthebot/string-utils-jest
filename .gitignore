@@ -1,0 +1,18 @@
+#
+# Ignores local-only files and generated artifacts for the string utility library.
+# Connects to: Git, npm, Jest, VS Code.
+# Created: 2026-06-27
+AGENTS.md
+.env
+.env.*
+!.env.example
+venv/
+__pycache__/
+*.pyc
+node_modules/
+.DS_Store
+*.log
+dist/
+build/
+coverage/
+

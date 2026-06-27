@@ -1,0 +1,31 @@
+{
+  "name": "string-utils-jest",
+  "version": "0.1.0",
+  "description": "Tested JavaScript string utility library with 20 modular functions.",
+  "main": "src/index.js",
+  "type": "commonjs",
+  "files": [
+    "src"
+  ],
+  "scripts": {
+    "test": "jest --runInBand",
+    "lint": "eslint .",
+    "format": "prettier --write .",
+    "format:check": "prettier --check ."
+  },
+  "keywords": [
+    "string",
+    "utilities",
+    "jest",
+    "library"
+  ],
+  "license": "MIT",
+  "engines": {
+    "node": ">=22"
+  },
+  "devDependencies": {
+    "eslint": "^10.6.0",
+    "jest": "^30.4.2",
+    "prettier": "^3.9.1"
+  }
+}
