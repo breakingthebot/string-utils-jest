@@ -9,6 +9,7 @@
   ],
   "scripts": {
     "test": "jest --runInBand",
+    "test:coverage": "jest --runInBand --coverage",
     "lint": "eslint .",
     "format": "prettier --write .",
     "format:check": "prettier --check ."
