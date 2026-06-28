@@ -66,11 +66,14 @@ describe('public package api', () => {
     expect(packageMetadata.scripts['cli:smoke']).toBe(
       'node ./bin/string-utils.js --version && node ./bin/string-utils.js slugify Clean URLs For Humans'
     );
+    expect(packageMetadata.scripts['docs:check']).toBe(
+      'node ./scripts/checkReadmeCliUsage.js'
+    );
     expect(packageMetadata.scripts['package:check']).toBe(
       'npm pack --dry-run --cache ./.npm-cache'
     );
     expect(packageMetadata.scripts['release:check']).toBe(
-      'npm run lint && npm run format:check && npm run test:coverage && npm run package:check'
+      'npm run lint && npm run format:check && npm run docs:check && npm run test:coverage && npm run package:check'
     );
   });
 });

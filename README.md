@@ -30,6 +30,7 @@ This project does not require environment variables. See `.env.example`.
 - Run `npm run cli -- --help` to inspect the CLI.
 - Run `npm run package:check` to preview the publishable npm tarball.
 - Run `npm run cli:smoke` to verify the installable CLI entry point quickly.
+- Run `npm run docs:check` to verify the README CLI examples still match the CLI commands.
 
 ## Deployed
 
@@ -42,7 +43,7 @@ This project is a focused utility library rather than an app. The core idea is s
 ## Notes
 
 - The package is implemented as CommonJS to keep Jest setup straightforward.
-- CI currently runs linting, format checks, tests, and CLI smoke checks on Ubuntu, Windows, and macOS, with release verification on Ubuntu.
+- CI currently runs linting, format checks, tests, README docs checks, and CLI smoke checks on Ubuntu, Windows, and macOS, with release verification on Ubuntu.
 - Releases are prepared through GitHub Actions from `v*` tags and require an `NPM_TOKEN` secret.
 - Coverage output is written to `coverage/` locally and ignored by Git.
 - The published package exposes one root entry point with matching runtime and type metadata.
@@ -68,14 +69,15 @@ const preview = truncate(slug, 12);
 ## CLI Usage
 
 ```bash
-npm run cli -- slugify Clean URLs For Humans
-npm run cli -- truncate Engineering quality matters --length 15
-npm run cli -- title-case clean-code habits
 npm run cli -- mask secret-token --visible 4 --mask #
+npm run cli -- slugify Clean URLs For Humans
+npm run cli -- title-case clean-code habits
+npm run cli -- truncate Engineering quality matters --length 15
 ```
 
 ## Test Layout
 
+- `tests/services/docs/getCliUsageSection.test.js` covers generated README CLI usage content.
 - `tests/cli/parseArgs.test.js` covers CLI argument parsing branches.
 - `tests/cli/runCli.test.js` covers CLI behavior, output, and error handling.
 - `tests/utils/string/analysis.test.js` covers counting and detection helpers.

@@ -74,3 +74,16 @@ All notable changes to this project are documented in this file.
 
 - CI now runs standard tests and CLI smoke checks across three operating systems.
 - Ubuntu CI additionally runs the full release verification flow.
+
+## [0.7.0] - 2026-06-28
+
+### Added
+
+- Generated README CLI usage section helper under `src/services/docs/`.
+- `docs:check` script to prevent README CLI examples from drifting away from command definitions.
+- Test coverage for generated CLI documentation content.
+
+### Changed
+
+- CI now verifies README CLI usage examples in addition to runtime checks.
+- Release verification now includes the README docs consistency check.
