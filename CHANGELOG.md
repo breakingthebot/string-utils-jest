@@ -50,3 +50,15 @@ All notable changes to this project are documented in this file.
 
 - Package metadata now publishes the CLI and exposes a local `npm run cli` script.
 - README now documents terminal usage examples for the CLI.
+
+## [0.5.0] - 2026-06-27
+
+### Added
+
+- GitHub Actions release workflow for tag-driven npm publishing.
+- `package:check` and `release:check` scripts for local release verification.
+
+### Changed
+
+- Package metadata now includes repository, homepage, bugs, and publish configuration fields.
+- README now documents the publish verification and release process.

@@ -28,6 +28,7 @@ This project does not require environment variables. See `.env.example`.
 - Run `npm run format:check` to verify formatting.
 - Import the package from JavaScript or TypeScript through the root entry point.
 - Run `npm run cli -- --help` to inspect the CLI.
+- Run `npm run package:check` to preview the publishable npm tarball.
 
 ## Deployed
 
@@ -41,9 +42,18 @@ This project is a focused utility library rather than an app. The core idea is s
 
 - The package is implemented as CommonJS to keep Jest setup straightforward.
 - CI currently runs linting, format checks, and coverage-aware tests on every push and pull request.
+- Releases are prepared through GitHub Actions from `v*` tags and require an `NPM_TOKEN` secret.
 - Coverage output is written to `coverage/` locally and ignored by Git.
 - The published package exposes one root entry point with matching runtime and type metadata.
 - The published package also exposes a `string-utils` CLI with `--help` and `--version`.
+
+## Release Process
+
+1. Update the version in `package.json`.
+2. Run `npm run release:check`.
+3. Commit the release changes.
+4. Create and push a tag such as `v0.5.0`.
+5. Ensure the repository has an `NPM_TOKEN` Actions secret so `.github/workflows/release.yml` can publish.
 
 ## TypeScript Usage
 
