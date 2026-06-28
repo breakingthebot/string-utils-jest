@@ -62,3 +62,15 @@ All notable changes to this project are documented in this file.
 
 - Package metadata now includes repository, homepage, bugs, and publish configuration fields.
 - README now documents the publish verification and release process.
+
+## [0.6.0] - 2026-06-27
+
+### Added
+
+- `cli:smoke` script for fast end-to-end CLI verification.
+- Cross-platform CI matrix coverage for Ubuntu, Windows, and macOS.
+
+### Changed
+
+- CI now runs standard tests and CLI smoke checks across three operating systems.
+- Ubuntu CI additionally runs the full release verification flow.

@@ -1,6 +1,6 @@
 {
   "name": "string-utils-jest",
-  "version": "0.5.0",
+  "version": "0.6.0",
   "description": "Tested JavaScript string utility library with 20 modular functions.",
   "main": "src/index.js",
   "types": "index.d.ts",
@@ -34,6 +34,7 @@
     "test": "jest --runInBand",
     "test:coverage": "jest --runInBand --coverage",
     "cli": "node ./bin/string-utils.js",
+    "cli:smoke": "node ./bin/string-utils.js --version && node ./bin/string-utils.js slugify Clean URLs For Humans",
     "package:check": "npm pack --dry-run --cache ./.npm-cache",
     "release:check": "npm run lint && npm run format:check && npm run test:coverage && npm run package:check",
     "lint": "eslint .",

@@ -29,6 +29,7 @@ This project does not require environment variables. See `.env.example`.
 - Import the package from JavaScript or TypeScript through the root entry point.
 - Run `npm run cli -- --help` to inspect the CLI.
 - Run `npm run package:check` to preview the publishable npm tarball.
+- Run `npm run cli:smoke` to verify the installable CLI entry point quickly.
 
 ## Deployed
 
@@ -41,7 +42,7 @@ This project is a focused utility library rather than an app. The core idea is s
 ## Notes
 
 - The package is implemented as CommonJS to keep Jest setup straightforward.
-- CI currently runs linting, format checks, and coverage-aware tests on every push and pull request.
+- CI currently runs linting, format checks, tests, and CLI smoke checks on Ubuntu, Windows, and macOS, with release verification on Ubuntu.
 - Releases are prepared through GitHub Actions from `v*` tags and require an `NPM_TOKEN` secret.
 - Coverage output is written to `coverage/` locally and ignored by Git.
 - The published package exposes one root entry point with matching runtime and type metadata.
