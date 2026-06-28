@@ -37,3 +37,16 @@ All notable changes to this project are documented in this file.
 
 - Package metadata now includes `types`, `exports`, and publishable type files.
 - README now documents TypeScript consumption from the root package entry point.
+
+## [0.4.0] - 2026-06-27
+
+### Added
+
+- Installable `string-utils` CLI entry point under `bin/`.
+- Modular CLI parser, help generator, and command definitions under `src/cli/`.
+- CLI test coverage for help, version, commands, and invalid input branches.
+
+### Changed
+
+- Package metadata now publishes the CLI and exposes a local `npm run cli` script.
+- README now documents terminal usage examples for the CLI.

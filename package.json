@@ -1,9 +1,12 @@
 {
   "name": "string-utils-jest",
-  "version": "0.1.0",
+  "version": "0.4.0",
   "description": "Tested JavaScript string utility library with 20 modular functions.",
   "main": "src/index.js",
   "types": "index.d.ts",
+  "bin": {
+    "string-utils": "./bin/string-utils.js"
+  },
   "type": "commonjs",
   "exports": {
     ".": {
@@ -13,16 +16,19 @@
   },
   "files": [
     "src",
+    "bin",
     "index.d.ts"
   ],
   "scripts": {
     "test": "jest --runInBand",
     "test:coverage": "jest --runInBand --coverage",
+    "cli": "node ./bin/string-utils.js",
     "lint": "eslint .",
     "format": "prettier --write .",
     "format:check": "prettier --check ."
   },
   "keywords": [
+    "cli",
     "string",
     "typescript",
     "utilities",

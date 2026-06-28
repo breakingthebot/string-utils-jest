@@ -27,6 +27,7 @@ This project does not require environment variables. See `.env.example`.
 - Run `npm run lint` to check code quality.
 - Run `npm run format:check` to verify formatting.
 - Import the package from JavaScript or TypeScript through the root entry point.
+- Run `npm run cli -- --help` to inspect the CLI.
 
 ## Deployed
 
@@ -42,6 +43,7 @@ This project is a focused utility library rather than an app. The core idea is s
 - CI currently runs linting, format checks, and coverage-aware tests on every push and pull request.
 - Coverage output is written to `coverage/` locally and ignored by Git.
 - The published package exposes one root entry point with matching runtime and type metadata.
+- The published package also exposes a `string-utils` CLI with `--help` and `--version`.
 
 ## TypeScript Usage
 
@@ -52,8 +54,19 @@ const slug = slugify('Typed consumer example');
 const preview = truncate(slug, 12);
 ```
 
+## CLI Usage
+
+```bash
+npm run cli -- slugify Clean URLs For Humans
+npm run cli -- truncate Engineering quality matters --length 15
+npm run cli -- title-case clean-code habits
+npm run cli -- mask secret-token --visible 4 --mask #
+```
+
 ## Test Layout
 
+- `tests/cli/parseArgs.test.js` covers CLI argument parsing branches.
+- `tests/cli/runCli.test.js` covers CLI behavior, output, and error handling.
 - `tests/utils/string/analysis.test.js` covers counting and detection helpers.
 - `tests/utils/string/caseConversion.test.js` covers casing and token-based conversions.
 - `tests/utils/string/formatting.test.js` covers truncation, padding, masking, and whitespace changes.
