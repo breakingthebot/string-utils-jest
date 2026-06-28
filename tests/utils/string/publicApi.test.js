@@ -66,6 +66,9 @@ describe('public package api', () => {
     expect(packageMetadata.scripts['cli:smoke']).toBe(
       'node ./bin/string-utils.js --version && node ./bin/string-utils.js slugify Clean URLs For Humans'
     );
+    expect(packageMetadata.scripts['docs:sync']).toBe(
+      'node ./scripts/syncReadmeCliUsage.js'
+    );
     expect(packageMetadata.scripts['docs:check']).toBe(
       'node ./scripts/checkReadmeCliUsage.js'
     );

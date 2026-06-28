@@ -30,6 +30,7 @@ This project does not require environment variables. See `.env.example`.
 - Run `npm run cli -- --help` to inspect the CLI.
 - Run `npm run package:check` to preview the publishable npm tarball.
 - Run `npm run cli:smoke` to verify the installable CLI entry point quickly.
+- Run `npm run docs:sync` to rewrite the README CLI examples from the CLI definitions.
 - Run `npm run docs:check` to verify the README CLI examples still match the CLI commands.
 
 ## Deployed
@@ -48,14 +49,16 @@ This project is a focused utility library rather than an app. The core idea is s
 - Coverage output is written to `coverage/` locally and ignored by Git.
 - The published package exposes one root entry point with matching runtime and type metadata.
 - The published package also exposes a `string-utils` CLI with `--help` and `--version`.
+- README CLI examples can be regenerated from source metadata instead of edited by hand.
 
 ## Release Process
 
 1. Update the version in `package.json`.
-2. Run `npm run release:check`.
-3. Commit the release changes.
-4. Create and push a tag such as `v0.5.0`.
-5. Ensure the repository has an `NPM_TOKEN` Actions secret so `.github/workflows/release.yml` can publish.
+2. Run `npm run docs:sync` if CLI examples changed.
+3. Run `npm run release:check`.
+4. Commit the release changes.
+5. Create and push a tag such as `v0.8.0`.
+6. Ensure the repository has an `NPM_TOKEN` Actions secret so `.github/workflows/release.yml` can publish.
 
 ## TypeScript Usage
 
@@ -78,6 +81,7 @@ npm run cli -- truncate Engineering quality matters --length 15
 ## Test Layout
 
 - `tests/services/docs/getCliUsageSection.test.js` covers generated README CLI usage content.
+- `tests/services/docs/readmeCliUsageSection.test.js` covers README CLI section matching and replacement helpers.
 - `tests/cli/parseArgs.test.js` covers CLI argument parsing branches.
 - `tests/cli/runCli.test.js` covers CLI behavior, output, and error handling.
 - `tests/utils/string/analysis.test.js` covers counting and detection helpers.

@@ -87,3 +87,16 @@ All notable changes to this project are documented in this file.
 
 - CI now verifies README CLI usage examples in addition to runtime checks.
 - Release verification now includes the README docs consistency check.
+
+## [0.8.0] - 2026-06-28
+
+### Added
+
+- `docs:sync` script to rewrite the README CLI usage section from source metadata.
+- Shared README CLI usage replacement helpers under `src/services/docs/`.
+- Test coverage for README CLI section replacement behavior.
+
+### Changed
+
+- README now documents the automatic CLI docs synchronization flow.
+- Release steps now include regenerating CLI examples when command definitions change.

@@ -7,9 +7,11 @@ const fs = require('fs');
 const path = require('path');
 
 const getCliUsageSection = require('../src/services/docs/getCliUsageSection');
+const {
+  matchCliUsageSection,
+} = require('../src/services/docs/readmeCliUsageSection');
 
 const README_PATH = path.resolve(__dirname, '..', 'README.md');
-const CLI_SECTION_PATTERN = /## CLI Usage\s*\r?\n\r?\n```bash[\s\S]*?\r?\n```/;
 
 /**
  * Checks the README CLI usage block for drift.
@@ -18,7 +20,7 @@ const CLI_SECTION_PATTERN = /## CLI Usage\s*\r?\n\r?\n```bash[\s\S]*?\r?\n```/;
 function checkReadmeCliUsage() {
   const readmeContent = fs.readFileSync(README_PATH, 'utf8');
   const expectedSection = getCliUsageSection();
-  const actualMatch = readmeContent.match(CLI_SECTION_PATTERN);
+  const actualMatch = matchCliUsageSection(readmeContent);
 
   if (!actualMatch) {
     process.stderr.write('README.md is missing the CLI Usage section.\n');
